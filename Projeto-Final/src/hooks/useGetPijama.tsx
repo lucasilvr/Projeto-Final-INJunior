@@ -8,7 +8,7 @@ interface Params {
   limit?: number;
 }
 
-export default function useGetPijamas({ id, page = 1, limit = 9 }: Params = {}) {
+export default function useGetPijamas({ id, page, limit }: Params = {}) {
   const [pijamas, setPijamas] = useState<Pajama[]>([]);
 
   useEffect(() => {
@@ -19,12 +19,17 @@ export default function useGetPijamas({ id, page = 1, limit = 9 }: Params = {}) 
         .get(url)
         .then((response) => setPijamas([response.data]))
         .catch((error) => console.error("Erro ao buscar pijama por id:", error));
-    } else {
+    } else if (page !== undefined && limit !== undefined) {
       url += `?_page=${page}&_limit=${limit}`;
       axios
         .get(url)
         .then((response) => setPijamas(response.data))
         .catch((error) => console.error("Erro ao buscar pijamas:", error));
+    } else {
+      axios
+        .get(url)
+        .then((response) => setPijamas(response.data))
+        .catch((error) => console.error("Erro ao buscar todos pijamas:", error));
     }
   }, [id, page, limit]);
 
@@ -32,5 +37,6 @@ export default function useGetPijamas({ id, page = 1, limit = 9 }: Params = {}) 
 }
 
 // Exemplo de uso:
+// const pijamas = useGetPijamas();
 // const pijama = useGetPijamas({ id: 5 });
 // const pijamas = useGetPijamas({ page: 1, limit: 9 });
