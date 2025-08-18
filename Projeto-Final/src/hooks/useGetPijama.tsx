@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import type { Pajama } from "../Type/Pijama";
+import type { Pijama } from "../type/Pijama";
 
 interface Params {
   id?: number;
@@ -8,8 +8,14 @@ interface Params {
   limit?: number;
 }
 
-export default function useGetPijamas({ id, page, limit }: Params = {}) {
-  const [pijamas, setPijamas] = useState<Pajama[]>([]);
+interface ResultadoPijamas {
+  pijamas: Pijama[];
+  total: number;
+}
+
+export default function useGetPijamas({ id, page, limit }: Params = {}): ResultadoPijamas {
+  const [pijamas, setPijamas] = useState<Pijama[]>([]);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     let url = "http://localhost:3000/pijamas";
@@ -17,26 +23,36 @@ export default function useGetPijamas({ id, page, limit }: Params = {}) {
       url += `/${id}`;
       axios
         .get(url)
-        .then((response) => setPijamas([response.data]))
-        .catch((error) => console.error("Erro ao buscar pijama por id:", error));
+        .then((response) => {
+          setPijamas([response.data]);
+          setTotal(1);
+        })
+        .catch((error) => console.error("Erro ao buscar pijama:", error));
     } else if (page !== undefined && limit !== undefined) {
       url += `?_page=${page}&_limit=${limit}`;
       axios
         .get(url)
-        .then((response) => setPijamas(response.data))
+        .then((response) => {
+          setPijamas(response.data);
+          const totalCount = parseInt(response.headers["x-total-count"] || "0");
+          setTotal(totalCount);
+        })
         .catch((error) => console.error("Erro ao buscar pijamas:", error));
     } else {
       axios
         .get(url)
-        .then((response) => setPijamas(response.data))
+        .then((response) => {
+          setPijamas(response.data);
+          setTotal(response.data.length);
+        })
         .catch((error) => console.error("Erro ao buscar todos pijamas:", error));
     }
   }, [id, page, limit]);
 
-  return pijamas;
+  return { pijamas, total };
 }
 
 // Exemplo de uso:
-// const pijamas = useGetPijamas();
-// const pijama = useGetPijamas({ id: 5 });
-// const pijamas = useGetPijamas({ page: 1, limit: 9 });
+// const { pijamas, total } = useGetPijamas();
+// const { pijamas: pijama } = useGetPijamas({ id: 5 });
+// const { pijamas, total } = useGetPijamas({ page: 1, limit: 9 });

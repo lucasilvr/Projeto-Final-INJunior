@@ -1,4 +1,4 @@
-export interface Pajama {
+export interface Pijama {
   id: string;
   name: string;
   description: string;
@@ -10,20 +10,20 @@ export interface Pajama {
   favorite: boolean;
   onSale: boolean;
   salePercent?: number;
-  sales: PajamaSale[];
-  sizes: PajamaSize[];
+  sales: PijamaSale[];
+  sizes: PijamaSize[];
 }
 
-export interface PajamaSize {
+export interface PijamaSize {
   id: string;
   size: string;
   stockQuantity: number;
-  pajamaId: string;
+  pijamaId: string;
 }
 
-export interface PajamaSale {
+export interface PijamaSale {
   saleId: string;
-  pajamaId: string;
+  pijamaId: string;
   price: number;
   quantity: number;
 }
