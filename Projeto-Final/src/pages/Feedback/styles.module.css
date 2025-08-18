@@ -20,7 +20,7 @@
   background-color: #74010b; /* --var(vermelho400) mudar depois */
   border-radius: 2px;
   box-shadow: 0px 4px 4px 0px #00000080;
-  text-align: center;   
+  text-align: center;
 }
 
 .cardContainer h1 {
@@ -39,70 +39,65 @@
 }
 
 .inputs {
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    gap: 30px;
-    width: 390px;
-    margin-top: 30px;
-    
-
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  gap: 30px;
+  width: 390px;
+  margin-top: 30px;
 }
 .firstInput {
-    box-shadow: 0px 4px 4px 0px #00000040;
-    height: 37px;
-    border: none;
-    border-radius: 2px;
-    padding-left: 15px
-
+  box-shadow: 0px 4px 4px 0px #00000040;
+  height: 37px;
+  border: none;
+  border-radius: 2px;
+  padding-left: 15px;
 }
 
 .secondInput {
-    box-shadow: 0px 4px 4px 0px #00000040;
-    height: 135px;
-    border: none;
-    border-radius: 2px;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-right: 15px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  height: 135px;
+  border: none;
+  border-radius: 2px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-right: 15px;
 }
 
 .firstInput::placeholder {
-    /* inserir a fonte ROBOTO */
+  /* inserir a fonte ROBOTO */
 }
 .secondInput::placeholder {
-    /* inserir a fonte ROBOTO */
+  /* inserir a fonte ROBOTO */
 }
 
-
 .button {
-    background-color: #A31621 /* --var(vermelho300) mudar depois */;
-    color: white;
-    width: 146px;
-    height: 38px;
-    margin-top: 50px;
-    box-shadow: 0px 5px 6px 0px #00000040;
-    border: none;
-    border-radius: 10px;
-    padding: 3px 23px 3px 23px;
-    font-size: 24px;
-    cursor: pointer;
-    /* font-family: Montserrat, tem que imporatr */
-
+  background-color: #a31621 /* --var(vermelho300) mudar depois */;
+  color: white;
+  width: 146px;
+  height: 38px;
+  margin-top: 50px;
+  box-shadow: 0px 5px 6px 0px #00000040;
+  border: none;
+  border-radius: 10px;
+  padding: 3px 23px 3px 23px;
+  font-size: 24px;
+  /* font-family: Montserrat, tem que imporatr */
 }
 
 .modal {
+  inset: 0;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .modalContent {
   background-color: white;
-  padding: 30px 40px;   
+  padding: 30px 40px;
   border-radius: 8px;
   text-align: center;
   color: #333;
