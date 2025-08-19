@@ -1,9 +1,13 @@
+import pijamaVantagens from "../../assets/Women's Pajama.png"
+import frete from "../../assets/frete.png"
+import familia from "../../assets/usuarios.png"
 import banner2 from "../../assets/BannerPromocao.png"
 import logoPreta from "../../assets/logoPreta.png";
 import banerImg from "../../assets/VectorCover (16).png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
+import Pijama from "../Pijama";
 
 // Tipos iguais ao back-end
 type Pijama = {
@@ -70,9 +74,26 @@ export default function Home() {
         <img src={banner2} alt="" />
       </section>
       
-      
-      
-      {/* Promoções */}
+      <main >
+       {/*Vantagens*/} 
+        <section className={styles.vantagens}>
+  <div className={styles.item}>
+    <img src={pijamaVantagens} alt="Pijama confortável" />
+    <p>Pijamas confortáveis <br /> e com tecnologia</p>
+  </div>
+
+  <div className={styles.item} id={styles.familia}>
+    <img src={familia} alt="Modelos para todas as idades" />
+    <p>Modelos para todas as <br /> idades e tamanhos</p>
+  </div>
+
+  <div className={styles.item}>
+    <img src={frete} alt="Frete grátis" />
+    <p>Frete grátis em todo o <br /> Brasil e exterior</p>
+  </div>
+</section>
+        
+        {/* Promoções */}
       <section className={styles.promocoes}>
         <h2>Nossas últimas promoções!</h2>
         <div className={styles.grid}>
@@ -100,6 +121,11 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </main>
     </>
   );
 }
+
+      
+      
+      

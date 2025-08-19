@@ -64,3 +64,50 @@
   height: 410px;
   transform: translateY(-8px);
 }
+
+main {
+
+  background-image: url("../../assets/VectorCover2.png");
+  background-color: white; 
+  background-size: cover;   
+  background-position: center;
+}
+
+.vantagens {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 60px;
+
+  background: url("../../assets/VectorCover (16).png");
+  background-size: cover;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.item {
+  max-width: 220px;
+  color: #1f3344;
+}
+
+.item img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 16px;
+}
+
+.item p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.4;
+    font-family: Nunito Sans;
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
