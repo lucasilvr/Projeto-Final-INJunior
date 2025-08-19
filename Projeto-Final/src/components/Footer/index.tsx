@@ -27,13 +27,28 @@ export default function Footer() {
           </div>
 
           <div className={styles.redesSociais}>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <img src={logoInsta} alt="Instagram" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <img src={logoFace} alt="Facebook" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <img src={logoLi} alt="LinkedIn" />
             </a>
           </div>
@@ -41,9 +56,10 @@ export default function Footer() {
 
         <div className={styles.logoFooter}>
           <img src={logo} alt="Logo IN Junior" />
+          <p className={styles.slogan}>Pijam&#123;IN&#125;ha</p>
         </div>
 
-        <div className={styles.iFrame}>
+        <div className={styles.IFrame}>
           <iframe
             title="Mapa IN Junior - UFF"
             loading="lazy"
@@ -59,6 +75,10 @@ export default function Footer() {
           />
         </div>
       </footer>
+
+      <div className={styles.copy}>
+        © Copyright 2025. IN Junior. Todos os direitos reservados. Niterói, Brasil.
+      </div>
     </>
   );
 }

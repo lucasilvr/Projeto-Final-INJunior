@@ -5,38 +5,61 @@ ul, ol {
 }
 
 footer {
+  height: 300px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  padding: 20px 60px;
+  padding: 20px 30px;
   background: #e7e6e7;
   font-family: Arial, sans-serif;
-  color: #374151; 
+  color: #4E8098; 
 }
 
 .contato {
   display: flex;
   flex-direction: column;
   max-width: 220px;
+  
 }
 
 /* títulos */
 .endereco h4,
 .faleConosco h4 {
   font-size: 14px;
-  color: #0f172a; /* quase preto */
+  color:#4E8098; 
   margin-bottom: 6px;
-  padding: 0; /* 🔴 tirei o padding de 100px */
+  padding: 0; 
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+   line-height: 100%;
+  letter-spacing: 4%;
+
 }
 
-/* separações verticais */
+
 .endereco {
   margin-bottom: 20px;
+  color:#274553 ;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 5%;
+
 }
 
 .faleConosco {
   margin-bottom: 20px;
+  color:#274553 ;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 5%;
+
 }
 
 .redesSociais {
@@ -45,8 +68,8 @@ footer {
 }
 
 .redesSociais img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   transition: transform 0.2s ease;
 }
 
@@ -54,23 +77,28 @@ footer {
   transform: scale(1.1);
 }
 
-/* logo */
-.logoFooter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1; 
-}
-
-.logoFooter img {
-  width: 219px;
-  height: 225px;
-}
-
-/* mapa */
-.IFrame {
-  width: 300px;
+.logoFooter img{
   height: 200px;
+}
+
+.slogan {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff; 
+  text-align: center;
+  font-family: Outfit;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 40.28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+}
+
+.IFrame {
+  width: 325px;  
+  height: 240px;  
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -81,3 +109,16 @@ footer {
   height: 100%;
   border: 0;
 }
+
+/* mapa */
+.copy {
+  width: 100%;
+  text-align: center;
+  background-color: #3E677A; 
+  color:#97C3D8 ;              
+  font-size: 12px;
+  padding: 10px 0;
+  font-family: Arial, sans-serif;
+}
+
+
