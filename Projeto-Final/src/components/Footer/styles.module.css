@@ -1,0 +1,83 @@
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px 60px;
+  background: #e7e6e7;
+  font-family: Arial, sans-serif;
+  color: #374151; 
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  max-width: 220px;
+}
+
+/* títulos */
+.endereco h4,
+.faleConosco h4 {
+  font-size: 14px;
+  color: #0f172a; /* quase preto */
+  margin-bottom: 6px;
+  padding: 0; /* 🔴 tirei o padding de 100px */
+}
+
+/* separações verticais */
+.endereco {
+  margin-bottom: 20px;
+}
+
+.faleConosco {
+  margin-bottom: 20px;
+}
+
+.redesSociais {
+  display: flex;
+  gap: 12px;
+}
+
+.redesSociais img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.redesSociais img:hover {
+  transform: scale(1.1);
+}
+
+/* logo */
+.logoFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; 
+}
+
+.logoFooter img {
+  width: 219px;
+  height: 225px;
+}
+
+/* mapa */
+.IFrame {
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.IFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
