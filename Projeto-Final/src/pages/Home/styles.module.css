@@ -1,3 +1,7 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 .banner {
   background-color: #72a7c1;
   position: relative;
@@ -52,4 +56,11 @@
     letter-spacing: 0%;
     text-align: center;
 
+}
+
+.bannerPromocao img {
+  display: block; 
+  width: 100%;
+  height: 410px;
+  transform: translateY(-8px);
 }

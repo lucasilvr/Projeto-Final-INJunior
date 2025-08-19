@@ -1,3 +1,4 @@
+import banner2 from "../../assets/BannerPromocao.png"
 import logoPreta from "../../assets/logoPreta.png";
 import banerImg from "../../assets/VectorCover (16).png";
 import { useEffect, useState } from "react";
@@ -64,6 +65,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Banner Promoão*/}
+      <section className={styles.bannerPromocao}>
+        <img src={banner2} alt="" />
+      </section>
+      
+      
+      
       {/* Promoções */}
       <section className={styles.promocoes}>
         <h2>Nossas últimas promoções!</h2>
