@@ -223,7 +223,7 @@ main {
 }
 
 .cardFeedbacks {
-  background: #ffffff;
+  background: #FCF7F8;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
@@ -231,14 +231,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   width: 405px;
   height: 345px;
-
   box-sizing: border-box;
-
   overflow: hidden;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .stars {
@@ -264,4 +261,39 @@ main {
   letter-spacing: 0%;
   text-align: center;
   vertical-align: bottom;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  background-color: #3b8197; 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 772px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #4E8098;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
 }

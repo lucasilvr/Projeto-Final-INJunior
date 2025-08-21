@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
 import useGetPijamas from "../../hooks/useGetPijama";
+import { Link } from "react-router-dom";
 
 type Feedback = {
   id: string;
@@ -124,6 +125,11 @@ export default function Home() {
                 <p className={styles.description}>{f.description}</p>
               </article>
             ))}
+          </div>
+          <div className={styles.wrapper}>
+            <Link to="/feedback" className={styles.button}>
+              Também quero dar um feedback!
+            </Link>
           </div>
         </section>
       </main>
