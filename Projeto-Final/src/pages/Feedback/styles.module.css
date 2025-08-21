@@ -101,11 +101,6 @@
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
-.button:hover {
-  background-color: #c02a2a;
-}
-
 .modal {
   position: fixed;
   inset: 0;

@@ -1,12 +1,27 @@
+import axios from 'axios';
 import { useForm } from "react-hook-form";
 import styles from "./styles.module.css";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { userSchema, type UserFormData } from "../../schemas/userSchema";
-import { authService } from "../../services/authService";
 import eyeIcon from "../../assets/eye-icon.png";
+import { useNavigate } from "react-router-dom";
+
+async function login(data: UserFormData) {
+  try {
+    const response = await axios.post('http://localhost:3333/auth/login', data);
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error) && error.response) {
+      throw new Error(error.response.data.message || 'Erro desconhecido no servidor.');
+    }
+    throw new Error('Não foi possível conectar ao servidor.');
+  }
+}
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -25,17 +40,24 @@ export default function Login() {
 
   async function handleLogin(data: UserFormData) {
     try {
-      const response = await authService.login(data);
-      console.log("Login bem-sucedido!", response);
+      const response = await login(data);
+      console.log("Login bem sucedido!", response);
+
       reset();
+      navigate("/home");
     } catch (error) {
       const message =
-        error instanceof Error ? error.message : "Credenciais inválidas.";
+        error instanceof Error ? error.message : "Informações inválidas";
       setError("root", {
         message: message,
       });
     }
   }
+
+  const handleCadastro = () => {
+    navigate("/cadastro");
+  };
+
 
   return (
     <div className={styles.background}>
@@ -57,11 +79,11 @@ export default function Login() {
               type="text"
               placeholder="Usuario ou E-mail"
               className={styles.inputField}
-              {...register("userOrEmail")}
+              {...register("identifier")}
             />
-            {errors.userOrEmail && (
+            {errors.identifier && (
               <span className={styles.errorMessage}>
-                {errors.userOrEmail.message}
+                {errors.identifier.message}
               </span>
             )}
           </div>
@@ -107,7 +129,7 @@ export default function Login() {
         <hr className={styles.line} />
 
         <div className={styles.btnRegister}>
-          <button type="button">CADASTRE-SE</button>
+          <button type="button" onClick={handleCadastro}>CADASTRE-SE</button>
         </div>
       </form>
     </div>

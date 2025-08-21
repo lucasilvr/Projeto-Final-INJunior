@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  background-image: url("../../assets/background-red.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.cardContainer {
+  width: 488px;
+  min-height: 620px;
+  background-color: #74010b;
+  border-radius: 2px;
+  box-shadow: 0px 4px 4px 0px #00000080;
+  text-align: center;
+  padding: 0 20px 40px 20px;
+}
+
+.cardContainer h1 {
+  color: #fcf7f8;
+  margin-top: 60px;
+  font-size: 48px;
+}
+
+.inputs {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputGroup {
+  width: 335px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs input {
+  height: 44px;
+  border: none;
+  border-radius: 2px;
+  padding-left: 10px;
+  width: 100%;
+  margin: 0;
+}
+
+.errorMessage {
+  color: #ffcdd2;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  text-align: center;
+}
+
+.btnRegister {
+  background-color: #a31621;
+  color: #fcf7f8;
+  width: 157px;
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 5px 6px 0px #00000040;
+  font-size: 24px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnRegister:disabled {
+  cursor: not-allowed;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent h2 {
+  color: #74010b;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.modalContent button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  background-color: #74010b;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}

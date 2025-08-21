@@ -6,23 +6,23 @@ import starEmpty from "../../assets/starEmpty.png";
 import starFilled from "../../assets/starFilled.png";
 
 export default function Feedback() {
-  const [nome, setNome] = useState("");
-  const [descricao, setDescricao] = useState("");
-  const [estrelas, setEstrelas] = useState(0);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [rating, setRating] = useState(0);
   const [modalAberto, setModalAberto] = useState(false);
 
   const submit = async () => {
-    if (!nome.trim() || !descricao.trim() || estrelas === 0) {
+    if (!name.trim() || !description.trim() || rating === 0) {
       alert("Insira todas as informações e selecione sua avaliação, por favor!");
       return;
     }
 
     try {
-      const feedBackData: Feedback = { nome, descricao, estrelas };
-      await axios.post("http://localhost:3333/users", feedBackData);
-      setNome("");
-      setDescricao("");
-      setEstrelas(0);
+      const feedBackData: Feedback = { name, description, rating };
+      await axios.post("http://localhost:3333/feedbacks", feedBackData);
+      setName("");
+      setDescription("");
+      setRating(0);
       setModalAberto(true);
     } catch (error) {
       console.error("Erro ao enviar feedback:", error);
@@ -44,22 +44,22 @@ export default function Feedback() {
               type="text"
               placeholder="Nome Completo"
               className={styles.firstInput}
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             <textarea
               placeholder="Descrição Detalhada"
               className={styles.secondInput}
-              value={descricao}
-              onChange={(e) => setDescricao(e.target.value)}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className={styles.stars}>
             {[1, 2, 3, 4, 5].map((n) => (
               <img
                 key={n}
-                src={n <= estrelas ? starFilled : starEmpty}
-                onClick={() => setEstrelas(n)}
+                src={n <= rating ? starFilled : starEmpty}
+                onClick={() => setRating(n)}
                 className={styles.starImage}
               />
             ))}

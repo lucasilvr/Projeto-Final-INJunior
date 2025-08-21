@@ -1,5 +1,5 @@
 export interface Feedback {
-  nome: string;
-  descricao: string;
-  estrelas: number;
+  name: string;
+  description: string;
+  rating: number;
 }
