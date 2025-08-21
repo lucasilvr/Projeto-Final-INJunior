@@ -1,3 +1,4 @@
+import pijamaIMG from "../../assets/PijamaIMG.png"
 import pijamaVantagens from "../../assets/Women's Pajama.png"
 import frete from "../../assets/frete.png"
 import familia from "../../assets/usuarios.png"
@@ -33,20 +34,13 @@ type Feedback = {
 };
 
 export default function Home() {
-  const [promocoes, setPromocoes] = useState<Pijama[]>([]);
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
   const pijamas = useGetPijamas()
   
   useEffect(() => {
     // Pijamas em promoção
-    axios
-      .get<Pijama[]>("http://localhost:3333/pajamas", { params: { onSale: true } })
-      .then((res) => {
-        const data = Array.isArray(res.data) ? res.data : [];
-        // Fallback: garante somente itens onSale
-        setPromocoes(data.filter((p) => p.onSale === true));
-      })
-      .catch((err) => console.error(err));
+   
+   
 
     // Feedbacks
     axios
@@ -60,8 +54,7 @@ export default function Home() {
       {/* Banner */}
       <section className={styles.banner}>
         <img className={styles.fundo} src={banerImg} alt="Imagem do Banner" />
-
-        <div className={styles.conteudo}>
+          <div className={styles.conteudo}>
           <img className={styles.logo} src={logoPreta} alt="Logo Pijam[IN]lha" />
           <h1 className={styles.titulo}>Pijam{`{IN}`}lha</h1>
           <p className={styles.subtitulo}>
@@ -98,10 +91,10 @@ export default function Home() {
         {/* Promoções */}
       <section className={styles.promocoes}>
         <h2>Nossas últimas promoções!</h2>
-        <div className={styles.grid}>
+        <div className={styles.gridPromo}>
           {pijamas.filter(p => p.onSale).map((p) => (
             <article key={p.id} className={styles.card}>
-              <div className={styles.imgFake}></div>
+              <img src={pijamaIMG} alt="" />
               <h3>{p.name}</h3>
               <p>R$ {Number(p.price).toFixed(2)}</p>
               {p.salePercent ? <small>{p.salePercent}% OFF</small> : null}
@@ -113,7 +106,7 @@ export default function Home() {
       {/* Feedbacks */}
       <section className={styles.feedbacks}>
         <h2>Feedbacks</h2>
-        <div className={styles.grid}>
+        <div className={styles.gridFeedbacks}>
           {feedbacks.map((f) => (
             <div key={f.id} className={styles.card}>
               <strong>{f.name}</strong>
