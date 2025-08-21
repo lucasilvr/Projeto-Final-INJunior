@@ -1,0 +1,147 @@
+.CardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.CardLink:hover {
+  scale: 1.05;
+  transition: 0.3s;
+}
+
+.CardPijamas {
+  width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 800px;
+}
+
+.ProductImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.ImgContainer {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+
+}
+
+.HeartIcon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.PromocaoIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+}
+
+.InfoContainer {
+  padding: 20px 10px;
+  background-color: #97C3D8;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+.PijamaName{
+  color: #3E677A;
+  font-size: 1.5rem;
+  font-family: Numans;
+}
+
+.NormalPriceContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.NormalPriceContainer h2{
+  color: rgba(39, 69, 83, 1);
+  font-size: 2.5rem;
+  font-family: Nunito Sans;
+  font-weight: 700;
+}
+
+.NormalPriceContainer p{
+  color: rgba(39, 69, 83, 1);
+  font-size: 1rem;
+  font-family: Nunito Sans;
+}
+
+.NormalPriceContainer p span{
+  color: rgba(39, 69, 83, 1);
+  font-size: 1rem;
+  font-family: Nunito Sans;
+  font-weight: 700;
+}
+
+.PromoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.PromoContainer h3 {
+  position: relative;
+  z-index: 0;
+  color: rgba(184, 41, 53, 1);
+  font-size: 1rem;
+  font-family: Nunito Sans;
+  font-weight: 400;
+}
+
+.PromoContainer h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  background: rgba(184, 41, 53, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.PromoContainer h2{
+  color: rgba(39, 69, 83, 1);
+  font-size: 2.5rem;
+  font-family: Nunito Sans;
+  font-weight: 700;
+}
+
+.PromoContainer p{
+  color: rgba(39, 69, 83, 1);
+  font-size: 1rem;
+  font-family: Nunito Sans;
+}
+
+.PromoContainer p span{
+  color: rgba(39, 69, 83, 1);
+  font-size: 1rem;
+  font-family: Nunito Sans;
+  font-weight: 700;
+}
+
+
+
+
+

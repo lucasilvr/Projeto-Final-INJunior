@@ -1,0 +1,166 @@
+.Card {
+  padding: 40px 150px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.Image {
+  width: 550px;
+  height: 830px;
+  object-fit: cover;
+}
+
+.Info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Nome {
+  font-size: 48px;
+  color: rgba(39, 69, 83, 1);
+}
+
+.Ref {
+  font-size: 14px;
+  color: rgba(78, 128, 152, 1);
+}
+
+.PrecoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 70px;
+}
+
+.PrecoContainer h1 {
+  font-size: 64px;
+  color: rgba(23, 23, 23, 1);
+  display: block;
+  margin: 0;
+  line-height: 1;
+}
+
+.Parcelas {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 24px;
+  color: rgba(95, 97, 101, 1);
+  margin: 0;
+}
+
+.Pix {
+  font-size: 24px;
+  color: rgba(95, 97, 101, 1);
+}
+
+.Tamanhos {
+  font-size: 24px;
+  color: rgba(23, 23, 23, 1);
+}
+
+.TamanhosList {
+  display: flex;
+  gap: 12px;
+  padding: 0;
+}
+
+.TamanhosList li {
+  list-style: none;
+}
+
+
+.SizeButton {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(78, 128, 152, 1);
+  color: rgba(252, 247, 248, 1);
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+.SizeButton:disabled {
+  opacity: 0.5;
+
+}
+
+.Selected {
+  background: rgba(151, 195, 216, 1);
+  color: rgba(62, 103, 122, 1);
+}
+
+.SizeInfo {
+  color: rgba(23,23,23,1);
+  font-size: 16px;
+}
+
+.SizeInfo span {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.Quantidade {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+
+}
+
+.QuantidadeContainer {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  border: 2px solid rgba(86, 86, 86, 1);
+  border-radius: 2px;
+}
+
+.QuantidadeContainer button{
+  width: 44px;
+  height: 44px;
+  border: none;
+  cursor: pointer;
+}
+
+.QuantidadeValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 1)
+}
+
+.AddToCartButton {
+  width: 430px;
+  height: 85px;
+  background-color: rgba(114, 168, 193, 1);
+  color: rgba(252, 247, 248, 1);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.AddToCartButton:disabled {
+  opacity: 0.5;
+}
+
+.ButtonsContainer {
+  display: flex;
+  gap: 20px;
+}
+.Like {
+  width: 64px;
+  height: 64px;
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
+}
+
+.HeartIcon {
+  width: 64px;
+  height: 64px;
+}

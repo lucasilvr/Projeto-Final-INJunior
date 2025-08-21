@@ -1,31 +1,21 @@
-import './styles.module.css'
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Paginacao from '../../components/Paginação';
-
+import useGetPijamas from "../../hooks/useGetPijama";
+import CardListaPijamas from "../../components/cardListaPijamas";
+import styles from "./styles.module.css";
 
 export default function Pijamas() {
-  const [paginaAtual, setPaginaAtual] = useState(1);
-  const [totalPaginas, setTotalPaginas] = useState(1);
-  const limitePorPagina = 12;
-
-  useEffect(() => {
-    axios
-      .get('http://localhost:3000/products?_limit=1')
-      .then(response => {
-        const total = parseInt(response.headers['x-total-count'] || "0");
-        setTotalPaginas(Math.ceil(total / limitePorPagina));
-      });
-  }, []);
+  const pijamas = useGetPijamas();
 
   return (
     <div>
       <h1>Pijamas</h1>
-      <Paginacao
-        paginaAtual={paginaAtual}
-        totalPaginas={totalPaginas}
-        onChange={setPaginaAtual}
-      />
+
+      <div className={styles.ListaPijamas}>
+        {pijamas?.length
+          ? pijamas.map((p) => (
+              <CardListaPijamas key={p.id} {...p} />
+            ))
+          : <p>Nenhum pijama encontrado.</p>}
+      </div>
     </div>
   );
 }
