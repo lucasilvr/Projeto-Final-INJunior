@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background{
+    background-image: url('../assets/background-blue');
+}
+
+.top {
+    background-color: #FCF7F8;
+    width: auto;
+    height: 178px;
+}
+
+.icons {
+    padding-top: 80px;
+    padding-left: 40px;
+}
