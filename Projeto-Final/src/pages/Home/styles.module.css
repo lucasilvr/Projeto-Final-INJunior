@@ -63,6 +63,7 @@
   width: 100%;
   height: 410px;
   transform: translateY(-8px);
+  object-fit: cover;
 }
 
 main {
@@ -110,4 +111,115 @@ main {
     text-align: center;
 
 }
+/*----------------------------------------- styles de teste para promoções e feedbacks --------------------------------------*/
+/* Títulos das seções */
+.promocoes h2, .feedbacks h2 {
+  font-size: 1.25rem;
+  color: #b71c1c; /* vermelhinho do print */
+  margin: 8px 0 12px;
+}
 
+/* Grids responsivos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* ----- Cards de Promoção ----- */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  overflow: hidden;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+}
+
+/* imagem fake (banner do produto) */
+.imgFake {
+  height: 220px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,0)),
+    url("https://images.unsplash.com/photo-1520975938318-9bf61a21b2fb?q=80&w=600&auto=format&fit=crop") center/cover no-repeat;
+}
+
+/* conteúdo do card (título, preço, selo) */
+.card h3 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #334155;
+  padding: 10px 14px 0;
+  line-height: 1.2;
+  min-height: 38px; /* segura 2 linhas */
+}
+
+.card p {
+  padding: 6px 14px 0;
+  color: #334155;
+}
+
+/* preço destacado */
+.card p:nth-of-type(1) {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0a5d4f; /* verde-azulado */
+  margin-top: 6px;
+}
+
+/* badge de desconto (usa <small>) */
+.card small {
+  display: inline-block;
+  margin: 10px 14px 14px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #e3f2fd;
+  color: #0d47a1;
+  font-weight: 700;
+  font-size: .75rem;
+}
+
+/* ----- Cards de Feedback ----- */
+.feedbacks {
+  margin-top: 18px;
+}
+
+.feedbacks .grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.feedbacks .card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.10);
+  padding: 14px;
+}
+
+.feedbacks .card strong {
+  display: block;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* estrelas */
+.feedbacks .card p:first-of-type {
+  margin: 2px 0 8px;
+  color: #c62828; /* estrelas vermelhas */
+  font-size: 1.1rem;
+}
+
+/* texto do feedback */
+.feedbacks .card p:last-of-type {
+  color: #6b7280;
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+/* pequeno respaço geral entre seções */
+.promocoes, .feedbacks { padding: 8px 6px; }

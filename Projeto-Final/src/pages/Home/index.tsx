@@ -9,7 +9,7 @@ import axios from "axios";
 import styles from "./styles.module.css";
 import Pijama from "../Pijama";
 
-// Tipos iguais ao back-end
+
 type Pijama = {
   id: string;
   name: string;
