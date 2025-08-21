@@ -1,4 +1,14 @@
-.background {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background{
+    background-image: url('../assets/background-blue');
+}
+
+.top {
     background-color: #FCF7F8;
     width: auto;
     height: 178px;
