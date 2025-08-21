@@ -1,0 +1,110 @@
+.feedbacks {
+  margin: 0 auto;
+  padding: 0 clamp(12px, 3vw, 24px);
+}
+
+.feedbacks h2 {
+  font-family: Numans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 48.1px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-top: 60px;
+  color: #74010b;
+  margin-left: 230px;
+  padding-bottom: 20px;
+}
+
+.feedbacks h3 {
+  font-family: Numans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 40.08px;
+  color: black;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.gridFeedbacks {
+  display: flex;
+  justify-content: center;
+  gap: 84px;
+}
+
+.cardFeedbacks {
+  background: #FCF7F8;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 405px;
+  height: 345px;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.star {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.description {
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-style: Italic;
+  font-size: 16.03px;
+  padding-top: 50px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  background-color: #3b8197; 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 772px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #4E8098;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}

@@ -1,5 +1,3 @@
-import estrelaVazia from "../../assets/estrelaVazia.png";
-import estrelaCheia from "../../assets/Star.png";
 import pijamaIMG from "../../assets/PijamaIMG.png";
 import pijamaVantagens from "../../assets/Women's Pajama.png";
 import frete from "../../assets/frete.png";
@@ -7,32 +5,19 @@ import familia from "../../assets/usuarios.png";
 import banner2 from "../../assets/BannerPromocao.png";
 import logoPreta from "../../assets/logoPreta.png";
 import banerImg from "../../assets/VectorCover (16).png";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import styles from "./styles.module.css";
 import useGetPijamas from "../../hooks/useGetPijama";
-import { Link } from "react-router-dom";
+import FeedbackCarousel from "../../components/FeedbacksHome";
 
-type Feedback = {
-  id: string;
-  name: string;
-  description: string;
-  rating: number;
-};
 
 export default function Home() {
-  const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
+ 
   const pijamas = useGetPijamas();
+  
 
-  useEffect(() => {
-    // Pijamas em promoção
+  
+   
 
-    // Feedbacks
-    axios
-      .get<Feedback[]>("http://localhost:3333/feedbacks")
-      .then((res) => setFeedbacks(Array.isArray(res.data) ? res.data : []))
-      .catch((err) => console.error(err));
-  }, []);
 
   return (
     <>
@@ -100,38 +85,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Feedbacks */}
-        <section className={styles.feedbacks}>
-          <h2>Feedbacks</h2>
-
-          <div className={styles.gridFeedbacks}>
-            {feedbacks.slice(0, 3).map((f) => (
-              <article key={f.id} className={styles.cardFeedbacks}>
-                <h3 className={styles.name}>{f.name}</h3>
-
-                <div className={styles.stars}>
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <img
-                      key={i}
-                      src={
-                        i < Math.round(f.rating) ? estrelaCheia : estrelaVazia
-                      }
-                      alt="estrela"
-                      className={styles.star}
-                    />
-                  ))}
-                </div>
-
-                <p className={styles.description}>{f.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className={styles.wrapper}>
-            <Link to="/feedback" className={styles.button}>
-              Também quero dar um feedback!
-            </Link>
-          </div>
-        </section>
+        <FeedbackCarousel/>
+      
       </main>
     </>
   );
