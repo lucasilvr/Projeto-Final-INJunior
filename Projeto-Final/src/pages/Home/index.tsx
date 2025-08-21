@@ -1,3 +1,5 @@
+import estrelaVazia from "../../assets/estrelaVazia.png";
+import estrelaCheia from "../../assets/Star.png";
 import pijamaIMG from "../../assets/PijamaIMG.png";
 import pijamaVantagens from "../../assets/Women's Pajama.png";
 import frete from "../../assets/frete.png";
@@ -100,13 +102,27 @@ export default function Home() {
         {/* Feedbacks */}
         <section className={styles.feedbacks}>
           <h2>Feedbacks</h2>
+
           <div className={styles.gridFeedbacks}>
             {feedbacks.slice(0, 3).map((f) => (
-              <div key={f.id} className={styles.card}>
-                <strong>{f.name}</strong>
-                <p>{"⭐".repeat(Math.round(f.rating))}</p>
-                <p>{f.description}</p>
-              </div>
+              <article key={f.id} className={styles.cardFeedbacks}>
+                <h3 className={styles.name}>{f.name}</h3>
+
+                <div className={styles.stars}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <img
+                      key={i}
+                      src={
+                        i < Math.round(f.rating) ? estrelaCheia : estrelaVazia
+                      }
+                      alt="estrela"
+                      className={styles.star}
+                    />
+                  ))}
+                </div>
+
+                <p className={styles.description}>{f.description}</p>
+              </article>
             ))}
           </div>
         </section>

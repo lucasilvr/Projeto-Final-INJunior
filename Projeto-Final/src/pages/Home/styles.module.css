@@ -90,7 +90,7 @@ main {
   width: 150px;
   height: 150px;
   margin-bottom: 16px;
-  }
+}
 
 .item p {
   font-family: "Nunito Sans", sans-serif;
@@ -137,9 +137,9 @@ main {
 .card {
   height: 837px;
   width: 450px;
-  background: #97C3D8;
+  background: #97c3d8;
   border: 1px solid #e5e7eb;
-  
+
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -149,8 +149,8 @@ main {
 .card img {
   height: 612px;
   object-fit: cover;
-  width: 100%;        
-  display: block;     
+  width: 100%;
+  display: block;
 }
 
 .card:hover {
@@ -158,30 +158,110 @@ main {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
 }
 
-.promocoes h3{
-    font-family: Numans;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: 5%;
-    text-transform: uppercase;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 40px;
+.promocoes h3 {
+  font-family: Numans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
-.promocoes p{
-    font-family: Nunito Sans;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 40px;
-    text-align: center;
-    line-height: 100%;
-    letter-spacing: 0%;
+.promocoes p {
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 40px;
+  text-align: center;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
-.promocoes small{
-    text-align: center;
-    padding-top: 10px;
+.promocoes small {
+  text-align: center;
+  padding-top: 10px;
+}
+/* Feedbacks */
+
+.feedbacks {
+  margin: 0 auto;
+  padding: 0 clamp(12px, 3vw, 24px);
+}
+
+.feedbacks h2 {
+  font-family: Numans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 48.1px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-top: 60px;
+  color: #74010b;
+  margin-left: 230px;
+  padding-bottom: 20px;
+}
+
+.feedbacks h3 {
+  font-family: Numans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 40.08px;
+  color: black;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.gridFeedbacks {
+  display: flex;
+  justify-content: center;
+  gap: 84px;
+}
+
+.cardFeedbacks {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 405px;
+  height: 345px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+  margin-bottom: 200px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.star {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.description {
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-style: Italic;
+  font-size: 16.03px;
+  padding-top: 50px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: bottom;
 }
