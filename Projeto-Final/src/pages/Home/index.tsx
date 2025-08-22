@@ -1,3 +1,4 @@
+import selo from "../../assets/Promocao.svg";
 import banner2 from "../../assets/BannerPromocao.png";
 import bannerCarrossel2 from "../../assets/bannerCarrossel2.png";
 import bannerCarrosel3 from "../../assets/bannerCarrossel3.png";
@@ -11,6 +12,7 @@ import styles from "./styles.module.css";
 import useGetPijamas from "../../hooks/useGetPijama";
 import FeedbackCarousel from "../../components/FeedbacksCarrossel";
 import BannerCarousel from "../../components/BannerCarrosel";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const pijamas = useGetPijamas();
@@ -73,12 +75,13 @@ export default function Home() {
             {pijamas
               .filter((p) => p.onSale)
               .map((p) => (
-                <article key={p.id} className={styles.card}>
+                <Link key={p.id} to={`/pijama/${p.id}`} className={styles.card}>
                   <img src={pijamaIMG} alt="" />
+                  <img src={selo} alt="" />
                   <h3>{p.name}</h3>
                   <p>R$ {Number(p.price).toFixed(2)}</p>
                   {p.salePercent ? <small>{p.salePercent}% OFF</small> : null}
-                </article>
+                </Link>
               ))}
           </div>
         </section>
