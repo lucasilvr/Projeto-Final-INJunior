@@ -68,23 +68,46 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Promoções */}
-        <section className={styles.promocoes}>
-          <h2>Nossas últimas promoções!</h2>
-          <div className={styles.gridPromo}>
-            {pijamas
-              .filter((p) => p.onSale)
-              .map((p) => (
-                <Link key={p.id} to={`/pijama/${p.id}`} className={styles.card}>
-                  <img src={pijamaIMG} alt="" />
-                  <img src={selo} alt="" />
-                  <h3>{p.name}</h3>
-                  <p>R$ {Number(p.price).toFixed(2)}</p>
-                  {p.salePercent ? <small>{p.salePercent}% OFF</small> : null}
-                </Link>
-              ))}
-          </div>
-        </section>
+       // {/* Promoções */}
+<section className={styles.promocoes}>
+  <h2>Nossas últimas promoções!</h2>
+
+  <div className={styles.gridPromo}>
+    {pijamas
+      .filter((p) => p.onSale)
+      .map((p) => {
+        const precoOriginal = Number(p.price) || 0;
+        const temDesconto = !!p.salePercent && p.onSale;
+        const precoFinal = temDesconto
+          ? precoOriginal * (1 - Number(p.salePercent) / 100)
+          : precoOriginal;
+        const parcela6x = precoFinal / 6;
+
+        return (
+          <Link key={p.id} to={`/pijama/${p.id}`} className={styles.card}>
+            <img src={pijamaIMG} alt="" />
+            <img src={selo} alt="" />
+
+            <h3 className={styles.nome}>{p.name}</h3>
+
+            {temDesconto && (
+              <span className={styles.precoOriginal}>
+                R$ {precoOriginal.toFixed(2)}
+              </span>
+            )}
+
+            <strong className={styles.precoAtual}>
+              R$ {precoFinal.toFixed(2)}
+            </strong>
+
+            <small className={styles.parcelamento}>
+              6x de <b>R$ {parcela6x.toFixed(2)}</b>
+            </small>
+          </Link>
+        );
+      })}
+  </div>
+</section>
 
         <FeedbackCarousel />
       </main>

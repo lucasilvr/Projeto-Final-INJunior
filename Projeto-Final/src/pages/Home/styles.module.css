@@ -107,11 +107,50 @@ main {
 }
 
 /*  Promoções  */
+.nome {
+  font-family: Numans;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  text-align: center;         
+  padding: 18px 16px;
+}
 
+.precoOriginal {
+  display: block;
+  text-align: center;       
+  margin-top: 4px;
+  font-size: 18px;
+  color: #B82935;          
+  text-decoration: line-through;
+}
 
-.promocoes {
-  margin: 0 auto;
-  padding: 0 clamp(8px, 3vw, 20px);
+.precoAtual {
+  display: block;
+  text-align: center;
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.parcelamento {
+  display: block;
+  text-align: center;
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.parcelamento b {
+  font-weight: 700;
 }
 
 .promocoes h2 {
@@ -173,33 +212,6 @@ main {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
 }
 
-.promocoes h3 {
-  font-family: Numans;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: 5%;
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 40px;
-}
-
-.promocoes p {
-  font-family: Nunito Sans;
-  font-weight: 700;
-  font-style: Bold;
-  font-size: 40px;
-  text-align: center;
-  line-height: 100%;
-  letter-spacing: 0%;
-}
-
-.promocoes small {
-  text-align: center;
-  padding-top: 10px;
-}
 /* Feedbacks */
 
 .feedbacks {
