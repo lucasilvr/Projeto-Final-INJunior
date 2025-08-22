@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import fundoPreto from "../../assets/VectorCover (16).png"
 import type { Pijama } from "../../type/Pijama";
 import coracao from "../../assets/Coracao-Vermelho.svg"
 import styles from "./styles.module.css";
@@ -44,7 +44,7 @@ export default function Favoritos() {
   }, []);
 
   return (
-    <div >
+    <div style={{ backgroundImage: fundoPreto }}>
       <header >
         <Link
           style={{
