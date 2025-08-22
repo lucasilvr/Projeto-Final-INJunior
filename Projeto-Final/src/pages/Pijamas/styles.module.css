@@ -1,8 +1,104 @@
+.Main {
+    background-image: url("../../assets/Background.png");
+}
+
+.top {
+  width: auto;
+  height: 250px;
+  background-color: #72A8C1;
+}
+.Busca_Container {
+  display: flex;
+  justify-content: center;
+}
+
+.Busca {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.Busca input {
+  width: 800px;
+  height: 45px;
+  border: none;
+  border-radius: 24px;
+  padding: 10px;
+  padding-right: 48px;
+  outline: none;  
+}
+
+
+.Busca img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(39, 69, 83, 1);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.FilterBar {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+  outline: none;
+}
+
+.Filter {
+  width: 312px;
+  outline: none;
+}
+
+.FilterBar select {
+  width: 312px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  outline: none;
+}
+
 .ListaPijamas {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   width: 100%;
   gap: 80px;
   padding:  5%;
+}
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+
+.Button {
+  width: 64px;
+  outline: none;
+  border: none;
+  font-size: 32px;
+  background-color: rgba(114, 168, 193, 1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Ant {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.Prox {
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
