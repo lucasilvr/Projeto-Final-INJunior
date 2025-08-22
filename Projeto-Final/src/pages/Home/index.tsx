@@ -1,23 +1,19 @@
+import banner2 from "../../assets/BannerPromocao.png";
+import bannerCarrossel2 from "../../assets/bannerCarrossel2.png";
+import bannerCarrosel3 from "../../assets/bannerCarrossel3.png";
 import pijamaIMG from "../../assets/PijamaIMG.png";
 import pijamaVantagens from "../../assets/Women's Pajama.png";
 import frete from "../../assets/frete.png";
 import familia from "../../assets/usuarios.png";
-import banner2 from "../../assets/BannerPromocao.png";
 import logoPreta from "../../assets/logoPreta.png";
 import banerImg from "../../assets/VectorCover (16).png";
 import styles from "./styles.module.css";
 import useGetPijamas from "../../hooks/useGetPijama";
-import FeedbackCarousel from "../../components/FeedbacksHome";
-
+import FeedbackCarousel from "../../components/FeedbacksCarrossel";
+import BannerCarousel from "../../components/BannerCarrosel";
 
 export default function Home() {
- 
   const pijamas = useGetPijamas();
-  
-
-  
-   
-
 
   return (
     <>
@@ -38,10 +34,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Banner Promoão*/}
-      <section className={styles.bannerPromocao}>
-        <img src={banner2} alt="" />
-      </section>
+      {/* Banner Promoção*/}
+      <BannerCarousel
+        images={[banner2, bannerCarrossel2, bannerCarrosel3]}
+        interval={4000}
+        className={styles.bannerPromocao}
+      />
 
       <main>
         {/*Vantagens*/}
@@ -85,8 +83,7 @@ export default function Home() {
           </div>
         </section>
 
-        <FeedbackCarousel/>
-      
+        <FeedbackCarousel />
       </main>
     </>
   );
