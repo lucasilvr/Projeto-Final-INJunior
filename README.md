@@ -1,5 +1,5 @@
 Front-end do Projeto Final da IN Júnior feito por:
 
-Henrique Trope
-João Vitor Moutella
-Lucas Dias Silveira
+* Henrique Trope \n
+* João Vitor Moutella \n
+* Lucas Dias Silveira \n
