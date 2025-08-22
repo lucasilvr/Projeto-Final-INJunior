@@ -4,12 +4,9 @@ import styles from "./styles.module.css";
 export type BannerCarouselProps = {
 
   images: string[];
-
   interval?: number;
-
   className?: string;
- 
-  ariaLabel?: string;
+   ariaLabel?: string;
 };
 
 export default function BannerCarousel({
