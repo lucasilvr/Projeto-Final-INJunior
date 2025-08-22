@@ -16,39 +16,53 @@
   display: flex;
   flex-direction: column;
   min-height: 800px;
+  background-color: white;
+}
+
+.ImgContainer {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .ProductImg {
+  order: 1;
+  flex: 1 1 auto;
   width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
-}
-
-.ImgContainer {
-  width: 100%;
   position: relative;
-  box-sizing: border-box;
-
-}
-
-.HeartIcon {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  z-index: 10;
+  z-index: 1;
 }
 
 .PromocaoIcon {
   position: absolute;
   top: 8px;
   right: 8px;
+  width: 28px;
+  z-index: 4;
+  display: block;
+}
+
+.BotaoFavorito {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.HeartIcon {
   width: 32px;
   height: 32px;
-  z-index: 10;
+  display: block;
 }
 
 .InfoContainer {
