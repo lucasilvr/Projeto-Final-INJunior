@@ -26,7 +26,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-h1 {
+.background h1 {
     color: white;
     font-weight: 400;
 }
@@ -80,7 +80,7 @@ h1 {
     height: 40px;
 }
 
-button {
+.background button {
     height: 48px;
     width: 390px;
     margin-top: 30px;
@@ -91,9 +91,10 @@ button {
     font-size: 24px;
     font-weight: 500;
     color: white;
+    cursor: pointer;
 
 }
 
-input::placeholder {
+.background input::placeholder {
     padding-left: 10px;
 }

@@ -54,13 +54,13 @@
   z-index: 1001;
 }
 
-h1 {
+.background h1 {
   font-size: 32px;
   font-weight: 700;
   text-align: center;
 }
 
-h2 {
+.background h2 {
   font-size: 20px;
   font-weight: 200;
   text-align: center;
