@@ -44,7 +44,7 @@ export default function Login() {
       console.log("Login bem sucedido!", response);
 
       reset();
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Informações inválidas";

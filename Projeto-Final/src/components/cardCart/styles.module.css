@@ -1,0 +1,139 @@
+.Card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+  padding: 20px;
+}
+
+.Card:hover {
+  scale: 1.01;
+  background-color: rgba(114, 168, 193, 1);
+}
+
+.Card img {
+  width: 180px;
+  height: 270px;
+}
+
+.Left {
+  display: flex;
+  gap: 30px;
+  text-decoration: none;
+}
+
+.Card_Item_Info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Card_Item_Info h2 {
+  font-size: 25px;
+  font-weight: 700px;
+  color: rgba(39, 69, 83, 1)
+}
+
+.Card_Item_Info h3 {
+  font-size: 14px;
+  color: rgba(62, 103, 122, 1)
+}
+
+.Card_Item_Info h4 {
+  background-color: rgba(62, 103, 122, 1);
+  font-size: 20px;
+  width: fit-content;
+  padding: 10px;
+  color: rgba(252, 247, 248, 1);
+  margin-bottom: 5px;
+}
+
+.Right {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
+
+.Right button {
+  width: 64px;
+  height: 64px;
+  border: none;
+  cursor: pointer;
+}
+
+.Right img {
+  width: 64px;
+  height: 64px;
+}
+
+.Qnt h6 {
+  font-size: 24px;
+  font-style: italic;
+  color: rgba(23, 23, 23, 1);
+}
+
+.Bar {
+  display: flex;
+  gap: 12px;
+  min-height: 32px;
+  margin-top: 20px;
+  border: 1px solid rgba(62, 103, 122, 1);
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  background-color: white;
+}
+
+.Valor {
+  font-size: 32px;
+  font-weight: 700;
+  margin-right: 150px;
+}
+
+.Bar span {
+  font-size: 24px;
+}
+
+.Bar button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.Bar button img,
+.Bar img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.Delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.Remove_Button {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.Trash {
+  width: 24px;
+  height: 24px;
+}
