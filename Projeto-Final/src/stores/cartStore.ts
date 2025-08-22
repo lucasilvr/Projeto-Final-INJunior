@@ -1,24 +1,20 @@
-import type { Pijama } from "../type/Pijama";
-import { create } from "zustand";
+import { create } from 'zustand';
+import type { Pijama } from '../type/Pijama';
+
+export type CartItem = Pijama & { selectedSize?: string; quantity?: number };
 
 interface CartState {
-  items: Pijama[];
-  addItem: (item: Pijama) => void;
-  removeItem: (id: string) => void;
+  items: CartItem[];
+  addItem: (item: CartItem) => void;
+  removeItem: (key: string) => void;
   clearCart: () => void;
 }
 
 const useCartStore = create<CartState>((set) => ({
   items: [],
-  addItem: (item) => set((state) => ({ items: [...state.items, item] })),
-  removeItem: (id) => set((state) => {
-    const index = state.items.findIndex((item) => item.id === id);
-    if (index === -1) return state;
-    const newItems = [...state.items];
-    newItems.splice(index, 1);
-    return { items: newItems };
-  }),
-  clearCart: () => set({ items: [] })
+  addItem: (item) => set((s) => ({ items: [...s.items, item] })),
+  removeItem: (key) => set((s) => ({ items: s.items.filter(i => `${i.id}:${i.selectedSize ?? ''}` !== key) })),
+  clearCart: () => set({ items: [] }),
 }));
 
 export default useCartStore;
