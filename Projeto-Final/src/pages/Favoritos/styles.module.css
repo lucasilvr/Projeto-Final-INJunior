@@ -18,3 +18,17 @@
     padding-top: 80px;
     padding-left: 40px;
 }
+
+header{
+    width: 100%;
+    background-color: #fcf7f8;
+    height: 120px;
+}
+
+.fav{
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    margin-left: 20px;
+}
+

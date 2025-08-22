@@ -1,0 +1,108 @@
+/* === Carrossel === */
+.wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 8px 0;
+  z-index: 0;
+}
+
+.track {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0 8px;
+  scrollbar-width: none;        
+  -ms-overflow-style: none;     
+}
+.track::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+/* === Card === */
+.card {
+ text-decoration: none;   
+  color: inherit;          
+  display: flex;
+  flex-direction: column; 
+  position: relative; 
+  height: 437px;
+  width: 250px;
+  background: #97c3d8;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+  min-height: 38px;
+}
+
+.price {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* === Imagem === */
+
+.thumb {
+  transform: translateY(-20px);
+  width: 204px;
+  height: 321px;
+  object-fit: cover;
+  display: block;
+}
+
+/* like  */
+.likeBtnImg {
+  position: absolute;
+  top: 8px;
+  left: 8px;        
+  right: auto;      
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.likeBtnImg:hover { transform: scale(1.05); }
+
+/* === Setas === */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.98);
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+}
+.navBtn:disabled { opacity: 0.4; cursor: default; }
+.left { left: 8px; }
+.right { right: 8px; }
