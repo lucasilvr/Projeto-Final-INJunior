@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "./styles.module.css";
 import selo from "../../assets/Promocao.svg";
-import pijamaIMG from "../../assets/PijamaIMG.png";
 import useGetPijamas from "../../hooks/useGetPijama";
 import heartOn from "../../assets/Coracao-Vermelho.svg";
 import heartOff from "../../assets/Coracao-Transparente.svg";
@@ -125,7 +124,7 @@ export default function Promocoes() {
              
               <Link to={`/pijama/${id}`} className={styles.cardLink}>
                 <div className={styles.imgBox}>
-                  <img className={styles.produto} src={pijamaIMG} alt={p.name} />
+                  <img className={styles.produto} src={p.image} alt={p.name} />
                   <img className={styles.selo} src={selo} alt="Promoção" />
                 </div>
 

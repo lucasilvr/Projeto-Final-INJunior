@@ -73,7 +73,7 @@ export default function Cart() {
               alignItems: "center",
             }}
           >
-            <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
+            <div style={{ display: "flex", gap: 30, alignItems: "center", flexDirection: "column"}}>
               <h1 style={{ fontSize: "48px", fontWeight: 700 }}>
                 TOTAL: R$ {soma.toFixed(2).replace(".", ",")}
               </h1>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { Pijama } from "../../type/Pijama";
 import useCartStore, { type CartItem } from "../../stores/cartStore";
-import pijamaIMG from "../../assets/PijamaIMG.png";
 import Menos from "../../assets/Menos.svg";
 import Mais from "../../assets/Mais.svg";
 import styles from "./styles.module.css";
@@ -76,7 +75,7 @@ export default function CardPijama(pijama: Pijama) {
   return (
     <div className={styles.Card}>
       <div>
-        <img className={styles.Image} src={pijamaIMG} alt={pijama.name} />
+        <img className={styles.Image} src={pijama.image} alt={pijama.name} />
       </div>
       <div className={styles.Info}>
         <div>

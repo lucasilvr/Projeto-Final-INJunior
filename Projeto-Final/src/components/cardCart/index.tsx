@@ -5,7 +5,6 @@ import useCartStore from "../../stores/cartStore";
 import X from "../../assets/X.svg";
 import Menos from "../../assets/Menos.svg";
 import Mais from "../../assets/Mais.svg";
-import PijamaIMG from "../../assets/PijamaIMG.png"
 import useCartMath from "../../stores/somaCart";
 
 type CartItemType = {
@@ -20,7 +19,7 @@ type CartItemType = {
   sizes?: { id: string; stockQuantity: number; size: string }[];
 };
 
-export default function CardCart({ id , name, price, quantity, onSale, salePercent, selectedSize, sizes }: CartItemType) {
+export default function CardCart({ id , name, price, quantity, image, onSale, salePercent, selectedSize, sizes }: CartItemType) {
   const removeFromCart = useCartStore((state) => state.removeItem);
   const adicionarValor = useCartMath((s) => s.adicionarValor)
   const somarValor = useCartMath((s) => s.somarValor);
@@ -71,7 +70,7 @@ export default function CardCart({ id , name, price, quantity, onSale, salePerce
   return (
     <div className={styles.Card} key={id + (selectedSize ?? "")}>
       <Link to={`/pijama/${id}`} className={styles.Left}>
-        <img src={PijamaIMG} alt={name} />
+        <img src={image} alt={name} />
         <div className={styles.Card_Item_Info}>
           <div>
             <h2>{name}</h2>

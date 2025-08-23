@@ -3,7 +3,6 @@ import setaDir from "../../assets/proximo.png";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import type { Pijama } from "../../type/Pijama";
-import pijamaIMG from "../../assets/PijamaIMG.png";
 import axios from "axios";
 import vermelho from "../../assets/Coracao-Vermelho.svg";
 import transparente from "../../assets/Coracao-Transparente.svg";
@@ -58,7 +57,6 @@ export default function PijamasCarousel({ pijamas }: CarouselProps) {
   }, []);
 
   useEffect(() => {
-    // espera o DOM renderizar os novos cards
     requestAnimationFrame(() => requestAnimationFrame(updateEnds));
   }, [pijamas]);
 
@@ -71,7 +69,6 @@ export default function PijamasCarousel({ pijamas }: CarouselProps) {
 
   return (
     <section className={styles.wrap} aria-label="Carrossel de pijamas">
-      {/* Esquerda */}
       <button
         className={`${styles.navBtn} ${styles.left}`}
         onClick={() => scrollByViewport("left")}
@@ -81,14 +78,12 @@ export default function PijamasCarousel({ pijamas }: CarouselProps) {
         <img src={setaEsq} alt="Anterior" />
       </button>
 
-      {/* Trilho */}
       <div ref={trackRef} className={styles.track}>
         {pijamas.map((p) => (
           <CardPijamaLinkado key={p.id} pijama={p} />
         ))}
       </div>
 
-      {/* Direita */}
       <button
         className={`${styles.navBtn} ${styles.right}`}
         onClick={() => scrollByViewport("right")}
@@ -110,8 +105,8 @@ function CardPijamaLinkado({ pijama }: { pijama: Pijama }) {
   const precoComDesconto = +(pijama.price * (1 - percent));
 
   const handleToggle = (e: React.MouseEvent) => {
-    e.stopPropagation();    // não propaga pro Link
-    e.preventDefault();     // não navega
+    e.stopPropagation();
+    e.preventDefault();
     const novoFavorito = !curtida;
     setCurtida(novoFavorito);
     axios
@@ -122,7 +117,7 @@ function CardPijamaLinkado({ pijama }: { pijama: Pijama }) {
   return (
     <Link to={`/pijama/${pijama.id}`} className={styles.card}>
       <div className={styles.thumbWrap}>
-        <img className={styles.thumb} src={pijamaIMG} alt={pijama.name} />
+        <img className={styles.thumb} src={pijama.image} alt={pijama.name} />
 
         <button
           className={styles.likeBtnImg}

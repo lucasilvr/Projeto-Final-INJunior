@@ -6,7 +6,6 @@ import type { Pijama } from '../../type/Pijama';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import pijamaIMG from '../../assets/PijamaIMG.png';
 
 export default function CardListaPijamas(pijama: Pijama) {
   const [curtida, setCurtida] = useState<boolean>(!!pijama.favorite);
@@ -52,7 +51,7 @@ export default function CardListaPijamas(pijama: Pijama) {
           <img
             className={styles.ProductImg}
             style={{objectFit: "cover"}}
-            src={pijama.image=="https://photo-cdn2.icons8.com/F79FA5icYxiVVFQ4nMwNHhsgc65P0Tsa2KKFpPkNCr4/rs:fit:576:864/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5h/c3NldHMvYXNzZXRz/L3NhdGEvb3JpZ2lu/YWwvMzk0LzMyM2Vh/NzA3LTRkMWMtNDVj/My1iM2I0LTNiOWMz/NjMyNDBiNy5qcGc.webp" ? pijama.image : pijamaIMG}
+            src={pijama.image}
             alt={pijama.name}
           />
           
