@@ -39,15 +39,11 @@ React + TypeScript
 ```bash
 # 1. Clonar o repositório
 git clone SEU_LINK_DO_REPOSITORIO_FRONTEND
-cd pijaminha-frontend
 
 # 2. Instalar dependências
 npm install
 
-# 3. Criar arquivo de ambiente (.env.local) na raiz
-VITE_API_URL=http://localhost:3333
-
-# 4. Rodar servidor de desenvolvimento
+# 3. Rodar servidor de desenvolvimento
 npm run dev
 
 O site estará acessível em: http://localhost:5173
